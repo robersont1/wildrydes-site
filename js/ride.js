@@ -152,12 +152,12 @@ let map;
     function handleRequestClick(event) {
         var pickupLocation =  WildRydes.map.selectedPoint;
         var newUnicorn = {
-        Name: document.getElementById(unicornName),
-        Color: document.getElementById(unicornColor),
-        Gender: document.getElementById(unicornGender)
+        Name: $('#unicornName'),//document.getElementById(unicornName),
+        Color: $('#unicornColor'),//document.getElementById(unicornColor),
+        Gender: $('#unicornGender'),//document.getElementById(unicornGender)
         };
 
-        console.log(unicornName);
+        console.log($('#unicornName'));
         console.log(document.getElementById(unicornName));
         
         event.preventDefault();
