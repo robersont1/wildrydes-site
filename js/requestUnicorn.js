@@ -58,11 +58,7 @@ exports.handler = (event, context, callback) => {
 
 	const pickupLocation = requestBody.PickupLocation;
 
-	const unicorn = {
-			Name: requestBody.unicornName,
-			Color: requestBody.unicornColor,
-			Gender: requestBody.unicornGender,
-			};
+	const unicorn = requestBody.Characteristics;
 
 	recordRide(rideId, username, unicorn).then(() => {
 		// You can use the callback function to provide a return value from your Node.js
