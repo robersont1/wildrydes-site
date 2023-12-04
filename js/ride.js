@@ -19,7 +19,7 @@ let map;
 
     //  requestUnicorn
     //      make the POST request to the server
-    function requestUnicorn(pickupLocation) {
+    function requestUnicorn(pickupLocation, newUnicorn) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -32,13 +32,13 @@ let map;
                     Longitude: pickupLocation.longitude
                 },
                 Characteristics: {
-                    Name: unicornName,
-                    Color: unicornColor,
-                    Gender: unicornGender
+                    Name: newUnicorn.unicornName,
+                    Color: newUnicorn.unicornColor,
+                    Gender: newUnicorn.unicornGender
                 }
             }),
             contentType: 'application/json',
-            success: result => completeRequest(result, pickupLocation),
+            success: result => completeRequest(result, pickupLocation, newUnicorn),
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
@@ -49,16 +49,16 @@ let map;
 
     //  completeRequest
     //      a Unicorn has been dispatched to your location
-    function completeRequest(result, pickupLocation) {
+    function completeRequest(result, pickupLocation, newUnicorn) {
         var unicorn;
         var pronoun;
 
         console.log('Response received from API: ', result);
         //unicorn = result.Unicorn;
         unicorn = {
-                    Name: unicornName,
-                    Color: unicornColor,
-                    Gender: unicornGender
+                    Name: newUnicorn.unicornName,
+                    Color: newUnicorn.unicornColor,
+                    Gender: newUnicorn.unicornGender
                 };
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
@@ -150,9 +150,14 @@ let map;
     //      get current request location and POST request to server
     function handleRequestClick(event) {
         var pickupLocation =  WildRydes.map.selectedPoint;
-
+        var newUnicorn = {
+        Name: unicornName,
+        Color: unicornColor,
+        Gender: unicornGender
+        };
+        
         event.preventDefault();
-        requestUnicorn(pickupLocation);
+        requestUnicorn(pickupLocation, newUnicorn);
     }
 
     //  animateArrival
