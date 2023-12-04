@@ -33,7 +33,8 @@ let map;
                 },
                 Characteristics: {
                     Name: unicornName,
-                    Color: unicornColor
+                    Color: unicornColor,
+                    Gender: unicornGender
                 }
             }),
             contentType: 'application/json',
