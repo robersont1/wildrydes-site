@@ -8,7 +8,7 @@ const AWS = require('aws-sdk');
 
 const ddb = new AWS.DynamoDB.DocumentClient();
 
-const fleet = [
+var fleet = [
 	{
 		Name: 'Bucephalus',
 		Color: 'Golden',
@@ -58,7 +58,11 @@ exports.handler = (event, context, callback) => {
 
 	const pickupLocation = requestBody.PickupLocation;
 
-	const unicorn = findUnicorn(pickupLocation);
+	const unicorn = {
+			Name: requestBody.unicornName,
+			Color: requestBody.unicornColor,
+			Gender: requestBody.unicornGender,
+			};
 
 	recordRide(rideId, username, unicorn).then(() => {
 		// You can use the callback function to provide a return value from your Node.js
