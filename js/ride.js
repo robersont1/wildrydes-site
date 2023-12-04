@@ -156,6 +156,9 @@ let map;
         Color: document.getElementById(unicornColor),
         Gender: document.getElementById(unicornGender)
         };
+
+        console.log(unicornName);
+        console.log(document.getElementById(unicornName));
         
         event.preventDefault();
         requestUnicorn(pickupLocation, newUnicorn);
