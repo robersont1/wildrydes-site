@@ -24,7 +24,7 @@ c<!DOCTYPE html>
     <div class="info panel panel-default">
         <div class="panel-heading">
             
-            <button id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
+            
             <div class="dropdown pull-right">
                     <button id="accountLink" class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Account <span class="caret"></span>
@@ -38,7 +38,8 @@ c<!DOCTYPE html>
                     <input type = "text" placeholder = "Unicorn Name" id = unicornName required>
                     <input type = "text" placeholder = "Unicorn Color" id = unicornColor required>
                     <input type = "text" placeholder = "Unicorn Gender" id = unicornGender required>
-                    <input type="submit" value="Submit" onclick="handleRequestClick()"/>
+                    <button id="request" type = "submit" class="btn btn-primary" disabled="disabled">Set pickup</button>
+                    //<input type="submit" value="Submit" onclick="handleRequestClick()">
                 </form>
             </section>
         </div>
