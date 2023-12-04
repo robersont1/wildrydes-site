@@ -30,6 +30,10 @@ let map;
                 PickupLocation: {
                     Latitude: pickupLocation.latitude,
                     Longitude: pickupLocation.longitude
+                },
+                Characteristics: {
+                    Name: unicornName,
+                    Color: unicornColor
                 }
             }),
             contentType: 'application/json',
