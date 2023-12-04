@@ -56,9 +56,9 @@ let map;
         console.log('Response received from API: ', result);
         //unicorn = result.Unicorn;
         unicorn = {
-                    Name: newUnicorn.unicornName,
-                    Color: newUnicorn.unicornColor,
-                    Gender: newUnicorn.unicornGender
+                    Name: "Mike",//newUnicorn.unicornName,
+                    Color: "Red",//newUnicorn.unicornColor,
+                    Gender: "Male"//newUnicorn.unicornGender
                 };
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
