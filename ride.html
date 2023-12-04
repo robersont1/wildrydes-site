@@ -26,19 +26,21 @@ c<!DOCTYPE html>
             
             <button id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
             <div class="dropdown pull-right">
-                <form id = "color-name-form">
-                    <input type = "text" placeholder = "Unicorn Name" id = unicornName required>
-                    <input type = "text" placeholder = "Unicorn Color" id = unicornColor required>
-                    <input type = "text" placeholder = "Unicorn Gender" id = unicornGender required>
                     <button id="accountLink" class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                </form>
-                
                     Account <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="accountLink">
                     <li><a id="signOut" href="#">Sign out</a></li>
                 </ul>
             </div>
+            <section color-name>
+                <form id = "color-name-form">
+                    <input type = "text" placeholder = "Unicorn Name" id = unicornName required>
+                    <input type = "text" placeholder = "Unicorn Color" id = unicornColor required>
+                    <input type = "text" placeholder = "Unicorn Gender" id = unicornGender required>
+                    <button type = "submit" form = "color-name-form" value = "Submit">Submit</button>
+                </form>
+            </section>
         </div>
         <div class="panel-body">
             <ol id="updates">
@@ -59,14 +61,7 @@ c<!DOCTYPE html>
                 <textarea class="authToken"></textarea>
             </div>
         </div>
-            <section color-name>
-                <form id = "color-name-form">
-                    <input type = "text" placeholder = "Unicorn Name" id = unicornName required>
-                    <input type = "text" placeholder = "Unicorn Color" id = unicornColor required>
-                    <input type = "text" placeholder = "Unicorn Gender" id = unicornGender required>
-                    <button type = "submit" form = "color-name-form" value = "Submit">Submit</button>
-                </form>
-            </section>
+
     </div>
 
     <div id="noCognitoMessage" class="configMessage" style="display: none;">
