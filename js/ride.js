@@ -157,8 +157,8 @@ let map;
         Gender: $('#unicornGender'),//document.getElementById(unicornGender)
         };
 
-        console.log($('#unicornName'));
-        console.log(document.getElementById(unicornName));
+        console.log(document.getElementById("unicornName").value);
+        console.log(unicornName);
         
         event.preventDefault();
         requestUnicorn(pickupLocation, newUnicorn);
